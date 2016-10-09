@@ -79,3 +79,27 @@ body {
   top: 403px;
   width: 100%;
 }
+
+#warning {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #852828;
+  text-align: center;
+  font-size: 80px;
+  top: 90px;
+  color: white;
+  background-image: url('../images/gradient.png');
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+#warningLabel {
+  display: inline-block;
+  position: absolute;
+  left:0;
+  right:0;
+  top:80px;
+  bottom:0;
+
+}

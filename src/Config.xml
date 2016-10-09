@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <gmWebApp>
   <AppID>98756742</AppID>
-  <AppType>RemoteHigh</AppType>
+  <AppType>Local</AppType>
   <FriendlyName>SafeTrip</FriendlyName>
   <VehicleStatus>Drive</VehicleStatus>
   <AutoStart>false</AutoStart>
@@ -11,7 +11,7 @@
   <AppVersion>0.1.0</AppVersion>
   <SetupURL>setup.html</SetupURL>
   <LocalPath>App98756742</LocalPath>
-  <Developer>Isaiah Turner</Developer>
+  <Developer>Patrick Murray| Isaiah Turner | Harrison Weinerman</Developer>
   <TrustedApp>false</TrustedApp>
   <RequestedBy>1</RequestedBy>
   <TestApp>true</TestApp>
