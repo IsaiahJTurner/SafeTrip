@@ -64,7 +64,8 @@ function processData(data) {
 function calculateAcceleration(vi, vf, timeInterval) {
     var a = ((vi * 3.6) - (vf * 3.6)) / timeInterval;
     console.log(a);
-    forwardAcclElem.innerHTML = a;
+    var accelGs = a / 9.8;
+    forwardAcclElem.innerHTML = accelGs.toFixed(2) + "g";
 }
 
 function calculateLateralAcceleration(v) {
@@ -75,7 +76,8 @@ function calculateLateralAcceleration(v) {
     console.log('v in m/s:', v / 3.6);
     console.log('v squared:', Math.pow((v / 3.6), 2.0));
     lateralAcceleration = Math.pow((v / 3.6), 2.0) / Math.abs(r);
-    latAcclElem.innerHTML = lateralAcceleration;
+    var latGs = lateralAcceleration / 9.8;
+    latAcclElem.innerHTML = latGs.toFixed(2) + "g";
 }
 
 function cleanupOldAlerts() {
