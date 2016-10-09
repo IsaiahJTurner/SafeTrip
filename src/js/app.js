@@ -16,19 +16,11 @@ var alerts = [];
 
 console.log('test date:', Date.now());
 
-addDrivingAlert("Rough braking incident--")
-
-
-// Call processData will all available signals. Expect a 5+ second delay before callback is triggered
-//gm.info.getVehicleData(processData);
 
 // Call processData with only 'engine_oil_temp' signal. Callback triggered much faster with fewer signals
  gm.info.getVehicleData(processData, ['gps_speed', 'wheel_angle']);
  gm.info.watchVehicleData(processData, ['gps_speed', 'wheel_angle']);
 
-  // setInterval(cleanupOldAlerts, 10 * 1000);
-  // setTimeout(fuckShitUp, 7 * 1000);
-  // setTimeout(fuckShitUpAgain, 13 * 1000);
 
   function fuckShitUp() {
     addDrivingAlert("Took turn too fast--")
@@ -83,7 +75,7 @@ function calculateLateralAcceleration(v) {
     console.log('v in m/s:', v / 3.6);
     console.log('v squared:', Math.pow((v / 3.6), 2.0));
     lateralAcceleration = Math.pow((v / 3.6), 2.0) / Math.abs(r);
-    latAcclElem.innerHTML = Math.floor(lateralAcceleration, 3);
+    latAcclElem.innerHTML = lateralAcceleration;
 }
 
 function cleanupOldAlerts() {
