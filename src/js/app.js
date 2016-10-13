@@ -142,8 +142,28 @@ function cleanupOldAlerts() {
   //  console.log('adding points from', points);
 
   //  points = points + (10 * indicesToSplice.length);
-    drivingScoreElem.innerHTML = points;
+    // drivingScoreElem.innerHTML = points;
 
+    var grade = "A";
+
+    if (points == 100) {
+      grade = "A";
+    }
+    else if (points == 90) {
+      grade = "B";
+    }
+    else if (points == 80) {
+      grade = "C";
+    }
+    else if (points == 70) {
+      grade = "D";
+    }
+    else {
+      grade = "-"
+    }
+
+    drivingScoreElem.innerHTML = grade;
+    drivingScoreElem.style.color = "hsl( 0, 90%, " + points + "%)"; //hsl(320, 50%, 75%);
 }
 
 function updateDrivingRecordBanner() {
@@ -178,9 +198,26 @@ function addDrivingAlert(type) {
     points = points - 10;
   } */
 
-  drivingScoreElem.innerHTML = points;
-   var red = -1 * ((50 * (points / 100)));
-  drivingScoreElem.style.color = "hsl( 0, 60%, " + points + "%)"; //hsl(320, 50%, 75%);
+  var grade = "A";
+
+  if (points == 100) {
+    grade = "A";
+  }
+  else if (points == 90) {
+    grade = "B";
+  }
+  else if (points == 80) {
+    grade = "C";
+  }
+  else if (points == 70) {
+    grade = "D";
+  }
+  else {
+    grade = "-"
+  }
+
+  drivingScoreElem.innerHTML = grade;
+  drivingScoreElem.style.color = "hsl( 0, 90%, " + points + "%)"; //hsl(320, 50%, 75%);
   lastAlertTime = Date.now()
   }
 }
