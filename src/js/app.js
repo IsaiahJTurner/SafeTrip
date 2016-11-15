@@ -13,6 +13,8 @@ var secondsTimestamp = 0;
 var lateralAcceleration = 0;
 var yaw = 0;
 var points = 100;
+var grade;
+
 var lastAlertTime = Date.now() - 5 * 1000;
 
 var alerts = [];
@@ -178,13 +180,32 @@ function addDrivingAlert(type) {
     points = points - 10;
   } */
 
+  grade = percentToGrade;
+
   drivingScoreElem.innerHTML = points;
    var red = -1 * ((50 * (points / 100)));
-  drivingScoreElem.style.color = "hsl( 0, 60%, " + points + "%)"; //hsl(320, 50%, 75%);
+  drivingScoreElem.style.color = "hsl( 0, 90%, " + grade + "%)"; //hsl(320, 50%, 75%);
   lastAlertTime = Date.now()
   }
 }
 
+function percentToGrade() {
+  if (points == 100) {
+    return "A";
+  }
+  else if (points == 90) {
+    return "B";
+  }
+  else if (points == 80) {
+    return "C";
+  }
+  else if (points == 70) {
+    return = "D";
+  }
+  else {
+    return "-"
+  }
+}
 
 function dismissAlertView() {
   alertDiv.style.display = 'none';
